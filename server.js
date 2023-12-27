@@ -1,10 +1,11 @@
-const axios   = require('axios'),
-      express = require('express'),
-      app     = express(),
-      session = require('express-session'),
-      {}      = require('./config'),
-      path    = require('path'),
-      port    = 3000;
+const axios      = require('axios'),
+      express    = require('express'),
+      app        = express(),
+      session    = require('express-session'),
+      {}         = require('./config'),
+      path       = require('path'),
+      serverless = require('serverless-http'),
+      port       = 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -19,3 +20,6 @@ app.get('/', (req, res) => {
     // style: path.join(__dirname, '/src/css/style.css')
   });
 });
+
+module.exports = app;
+module.exports.handler = serverless(app);
