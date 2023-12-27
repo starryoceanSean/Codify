@@ -1,0 +1,11 @@
+body {
+  background-color: #1E1F22;
+  color: #1e1f22;
+}
+header {
+  color: #5865f2;
+}
+header h1 {
+  font-family: monospace;
+  color : #5865f2;
+}
